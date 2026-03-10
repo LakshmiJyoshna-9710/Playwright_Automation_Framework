@@ -18,7 +18,7 @@ export default defineConfig({
     timeout: 60000,
   },
 
- /* reporter: [
+ reporter: [
   ['allure-playwright', {
     outputFolder: 'allure-results',
     detail: true,
@@ -26,7 +26,7 @@ export default defineConfig({
   }],
   ['html']
 ],
-*/
+
 use: {
     
   browserName: 'chromium',
