@@ -1,12 +1,11 @@
-// @ts-check
-import { defineConfig, devices } from '@playwright/test';
+const { defineConfig } = require('@playwright/test');
 
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir:'tests',
+  testDir:'/Users/lakshmijyoshna/Desktop/Playwright_Project1/tests',
   retries: 1,
    workers: 1,
   //testMatch: 'tests/InvalidLogin.spec.js',
@@ -19,23 +18,23 @@ export default defineConfig({
   },
 
  reporter: [
-  ['allure-playwright', {
-    outputFolder: 'allure-results',
-    detail: true,
-    suiteTitle: false
-  }],
-  ['html']
-],
-
-use: {
-    
-  browserName: 'chromium',
-  headless: true,
-    /* Collect trace when retrying the failed tst. See https://playwright.dev/docs/trace-viewer */
-  screenshot: 'on',
-  //trace: 'on' - for pass an fail both
-  trace: 'retain-on-failure'
+    ['allure-playwright', {
+      detail: true,
+      outputFolder: 'allure-results',   // Raw results go here
+      suiteTitle: false,
+    }],
+    ['list']                             // Console output
+  ],
+  use: {
+    browserName: 'chromium',
+    headless: true,
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+    trace: 'retain-on-failure',
   },
+
+
+  
 });
 
   

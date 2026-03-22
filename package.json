@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
     "test": "npx playwright test",
-    "test1": "npx playwright test tests/MoreValidations.spec.js"
+    "test1": "npx playwright test tests/MoreValidations.spec.js",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report",
+    "allure:report": "npm run allure:generate && npm run allure:open"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +18,8 @@
     "@azure/microsoft-playwright-testing": "^1.0.0-beta.7",
     "@playwright/test": "^1.54.1",
     "@types/node": "^22.15.29",
-    "allure-playwright": "^3.6.0"
+    "allure-playwright": "^3.6.0",
+    "allure-commandline": "^2.30.0"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.0.0",
