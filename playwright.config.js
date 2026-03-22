@@ -5,7 +5,7 @@ const { defineConfig } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir:'/Users/lakshmijyoshna/Desktop/Playwright_Project1/tests',
+  testDir: path.join(__dirname, 'tests'),
   retries: 1,
    workers: 1,
   //testMatch: 'tests/InvalidLogin.spec.js',
